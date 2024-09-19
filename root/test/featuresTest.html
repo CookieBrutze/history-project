@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>History Project Showcase</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: var(--background-color, white);
+      color: var(--text-color, black);
+      transition: all 0.3s ease;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .parallax {
+      background-image: url('https://via.placeholder.com/1600x800');
+      height: 400px;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .content {
+      padding: 20px;
+      text-align: center;
+    }
+
+    .content img {
+      width: 300px;
+      transition: transform 0.5s;
+    }
+
+    .content img:hover {
+      transform: rotate(5deg) scale(1.1);
+    }
+
+    .timeline {
+      padding: 20px;
+      margin: 40px 0;
+      border: 1px solid #ddd;
+    }
+
+    #map {
+      height: 300px;
+    }
+
+    .dark-mode-btn {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      padding: 10px 20px;
+      background-color: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .dark-mode-btn:hover {
+      background-color: #444;
+    }
+
+    :root {
+      --background-color: white;
+      --text-color: black;
+    }
+
+    .dark-mode :root {
+      --background-color: #121212;
+      --text-color: #e0e0e0;
+    }
+
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+</head>
+<body>
+
+  <button class="dark-mode-btn" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
+  <header>
+    <h1>History Project Showcase</h1>
+    <p>Exploring cool web features for a history project</p>
+  </header>
+
+  <!-- Parallax Scrolling Section -->
+  <div class="parallax"></div>
+
+  <!-- Content Section with Image Hover Effect -->
+  <div class="content">
+    <h2>Historical Artifact</h2>
+    <p>Hover over the image to see the effect</p>
+    <img src="https://via.placeholder.com/300x300" alt="Artifact Image">
+  </div>
+
+  <!-- Interactive Timeline Section -->
+  <div class="timeline">
+    <h2>Timeline Example</h2>
+    <p>This could be an interactive timeline showcasing key historical events.</p>
+  </div>
+
+  <!-- Interactive Map -->
+  <div class="content">
+    <h2>Historical Map</h2>
+    <p>Click on the map markers to explore historical locations</p>
+    <div id="map"></div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <script>
+    // Dark mode toggle
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+
+    // Initialize Leaflet map
+    var map = L.map('map').setView([51.505, -0.09], 3);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Adding markers to the map
+    L.marker([51.505, -0.09]).addTo(map)
+      .bindPopup('Historical Event 1')
+      .openPopup();
+
+    L.marker([48.8566, 2.3522]).addTo(map)
+      .bindPopup('Historical Event 2')
+      .openPopup();
+
+    L.marker([40.7128, -74.0060]).addTo(map)
+      .bindPopup('Historical Event 3')
+      .openPopup();
+  </script>
+
+</body>
+</html>

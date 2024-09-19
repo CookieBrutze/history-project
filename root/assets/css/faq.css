@@ -1,0 +1,28 @@
+.faq-answer {
+    display: none;
+    margin-top: 10px;
+  }
+  
+  .faq-question {
+    background-color: #f1f1f1;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    text-align: left;
+    width: 100%;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+  }
+  
+  .faq-question:hover {
+    background-color: #e0e0e0; /* Change background on hover */
+    color: #333; /* Optional: Change text color on hover */
+  }
+  
+  .faq-question:focus {
+    outline: none;
+  }
+  
+  .faq-item {
+    margin-bottom: 15px;
+  }
+  

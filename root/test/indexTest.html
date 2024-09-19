@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Test Website</title>
+    <link rel="stylesheet" href="../assets/css/index.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Welcome to My Test Site</h1>
+    </header>
+
+    <!-- Section 1 -->
+    <section id="section1">
+        <h2>About This Site</h2>
+        <p>This is a simple, text-based website designed to showcase how a clean and modern stylesheet can enhance readability. The site is divided into multiple sections with different background colors for easy navigation.</p>
+        <p>The header stays sticky at the top, while the footer remains at the bottom of the page.</p>
+        <p>Feel free to click <a href="#">this link</a> to see how links look with the styling.</p>
+    </section>
+
+    <!-- Section 2 -->
+    <section id="section2">
+        <h2>Why Simple Design Matters</h2>
+        <p>A minimalist design helps reduce distractions and focuses the reader's attention on the content. Consistent use of spacing, colors, and font sizes can make a huge difference in how comfortable it is to read a page.</p>
+        <p>This second section is styled slightly differently, with a new background color and header style to differentiate it from the first one.</p>
+    </section>
+
+    <!-- Footer will be loaded here -->
+    <div id="footer-placeholder"></div>
+
+    <script>
+        // JavaScript to load the footer component
+        fetch('../components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+
+</body>
+</html>
+

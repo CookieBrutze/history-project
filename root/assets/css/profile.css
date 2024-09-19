@@ -1,0 +1,112 @@
+/* Basic formatting for the page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(105, 105, 105);
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Profile container */
+.profile {
+    background-color: rgb(194, 194, 194);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+/* Profile title */
+.profile h1 {
+    font-size: 2em;
+    color: #0044cc;
+    text-align: center;
+}
+
+/* Profile picture */
+.profile img {
+    display: block;
+    max-width: 150px;
+    margin: 0 auto 20px auto;
+    border-radius: 50%;
+    border: 3px solid #0044cc;
+}
+
+/* Name and basic information */
+.profile h2 {
+    font-size: 1.5em;
+    color: #333;
+    text-align: center;
+}
+
+.profile h3 {
+    font-size: 1.5em;
+    color: #333;
+    text-align: left;
+    text-decoration: underline;
+}
+
+.profile p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin: 10px 0;
+    text-align: center;
+}
+
+/* List for additional details */
+.profile ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.profile ul li {
+    font-size: 1.1em;
+    background-color: #e6f2ff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    text-align: justify;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    background-color: black;
+    color: #d8d8d8;
+    margin-top: 20px;
+    
+}
+
+.footer-box {
+    background-color: rgb(51, 51, 51);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.parallax-luther {
+    background-image: url('../images/luther-parallax.jpg');
+    height: 900px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 20px; /* Adjust the value as needed */
+    overflow: hidden; /* Ensures the background image follows the rounded corners */
+}
+
+.parallax-schiller {
+    background-image: url('../images/schiller-parallax.jpg');
+    height: 900px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 20px; /* Adjust the value as needed */
+    overflow: hidden; /* Ensures the background image follows the rounded corners */
+}

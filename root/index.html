@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: rgb(105, 105, 105)
+        }
+
+        header {
+        background-color: #333;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        }
+
+        .parallax {
+        background-image: url('assets/images/portal.png');
+        height: 800px;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        }
+
+        .content {
+        padding: 20px;
+        text-align: center;
+        }
+
+        .content img {
+        width: 300px;
+        height: 300px;
+        transition: transform 0.5s;
+        }
+
+        .content img:hover {
+        transform: rotate(5deg) scale(1.1);
+        }
+
+        .content .hover-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        font-size: 24px;
+        background-color: rgba(0, 0, 0, 0.6);
+        padding: 10px;
+        opacity: 0;
+        transition: opacity 0.3s;
+        }
+
+        .content:hover .hover-text {
+        opacity: 1;
+        }
+
+        #map {
+        height: 300px;
+        }
+
+        .big-button {
+        display: inline-block;
+        padding: 20px 40px;
+        font-size: 24px;
+        color: white;
+        background-color: #FF6B6B;
+        text-decoration: none;
+        border-radius: 12px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .big-button:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .profile {
+            background-color: rgb(194, 194, 194);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+        }
+
+        /* Profile title */
+        .profile h1 {
+            font-size: 2em;
+            color: #0044cc;
+            text-align: center;
+        }
+
+        /* Profile picture */
+        .profile img {
+            display: block;
+            max-width: 150px;
+            margin: 0 auto 20px auto;
+            border-radius: 50%;
+            border: 3px solid #0044cc;
+        }
+
+        /* Name and basic information */
+        .profile h2 {
+            font-size: 1.5em;
+            color: #333;
+            text-align: center;
+        }
+
+        .profile h3 {
+            font-size: 1.5em;
+            color: #333;
+            text-align: left;
+            text-decoration: underline;
+        }
+
+        .profile p {
+            font-size: 1em;
+            line-height: 1.6;
+            margin: 10px 0;
+            text-align: justify;
+        }
+
+        /* List for additional details */
+        .profile ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .profile ul li {
+            font-size: 1.1em;
+            background-color: #e6f2ff;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            text-align: justify;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        .footer-container {
+            display: flex;
+            justify-content: space-around;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-column {
+            flex-basis: 30%;
+        }
+        
+        .footer-column h4 {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+        
+        .footer-column p, 
+        .footer-column ul {
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .footer-column ul li a:hover {
+            text-decoration: underline;
+        }
+        
+        .social-icons a {
+            margin-right: 15px;
+            display: inline-block;
+        }
+        
+        .social-icons img {
+            width: 24px;
+            height: 24px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding: 20px 0;
+            border-top: 1px solid #444;
+            margin-top: 30px;
+        }
+        
+        .footer-bottom p {
+            margin: 0;
+            font-size: 0.85em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Die deutsche Identität</h1>
+        <p>Goethe, Bismarck, Luther und Schiller</p>
+    </header>
+
+    <!-- Parallax Scrolling Section -->
+    <div class="parallax"></div>
+
+    <!-- Content Section with Image Hover Effect -->
+    <div class="content">
+        <a href="pages/goethe.html">
+            <img src="assets/images/Goethe.jpg">
+        </a>
+        <a href="pages/schiller.html">
+            <img src="assets/images/schiller.jpg">
+        </a>
+        <a href="pages/bismarck.html">
+            <img src="assets/images/bismarck.jpg">
+        </a>
+        <a href="pages/luther.html">
+            <img src="assets/images/luther.jpg">
+        </a>
+        <br> <br> <br>
+        <a href="pages/timeline.html" class="big-button">Deutschlands Geschichte</a>
+    </div>
+    <div class="profile">
+        <h2>Das Relief über dem Portal</h2>
+        <p>
+            Das Relief am Eingang der Goethe-Schule in Flensburg zeigt vier bedeutende Persönlichkeiten der deutschen Geschichte: Goethe, Schiller, Luther und Bismarck. Diese Menschen stehen für wichtige Entwicklungen in Kultur, Religion und Politik, die Deutschland nachhaltig geprägt haben. Goethe und Schiller, zwei der größten Dichter ihrer Zeit, repräsentieren die deutsche Literatur, wobei sie unterschiedliche Schwerpunkte setzten. Goethe, als vielseitiger Denker, war nicht nur Dichter, sondern auch Naturwissenschaftler und Philosoph, der in seinen Werken den individuellen Menschen und seine Beziehung zur Natur in den Mittelpunkt stellte. Schiller hingegen, der vor allem als Dramatiker berühmt wurde, betonte in seinen Werken das Ideal von Freiheit und Gerechtigkeit und setzte sich stark mit politischen und sozialen Themen auseinander.<br><br> Martin Luther, der Anführer der Reformation, veränderte die religiöse Landschaft Deutschlands und schuf mit dem Protestantismus eine der zentralen Strömungen des Christentums in Deutschland. Otto von Bismarck schließlich, der die deutsche Einigung im 19. Jahrhundert vorantrieb, steht für die politische und militärische Einheit Deutschlands. Gemeinsam zeigen diese vier Persönlichkeiten, wie Kultur, Religion und Politik die deutsche Identität geformt haben. Sie verkörpern das Streben nach geistiger Freiheit, religiöser Erneuerung und nationaler Einheit – zentrale Aspekte der deutschen Geschichte.
+        </p>
+    </div>
+    <br><br><br>
+    <footer>
+        <div class="footer-container">
+          <div class="footer-column">
+            <h4>Quellen:</h4>
+            <ul>
+                <li><a href="https://www.lutherweg-sachsen.de/martin_luther_lebenslauf.cfm">Lutherweg-Sachsen</a></li>
+                <li><a href="https://www.ekd.de/95-Thesen-10864.htm">EKD</a></li>
+                <li><a href="https://www.planet-wissen.de/kultur/religion/martin_luther/index.html">Planet Wissen</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Links:</h4>
+            <ul>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../pages/timeline.html">Timeline</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Elias's Teil</h4>
+            <ul>
+                <li><a href=""</li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <a href="https://github.com/CookieBrutze/history">
+                <img src="assets/images/github.png" height="200px" width="200px">
+            </a>
+          </div>
+        </div>
+    </footer>
+    <!---
+    <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h2>Die Märzrevolution (1848/49)</h2>
+            <p>Die Märzrevolution findet in vielen Teilen Deutschlands statt. Die Aufstände scheitern letztlich, aber sie legen die Grundlagen für die Demokratiebewegung und die spätere Verfassung des Deutschen Reiches.</p>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-content">
+            <h2>Test</h2>
+          </div>
+        </div>
+      </div>
+    <div class="content">
+        <h2>Historical Map</h2>
+        <p>Click on the map markers to explore historical locations</p>
+        <div id="map"></div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        // Dark mode toggle
+        function toggleDarkMode() {
+        document.body.classList.toggle('dark-mode');
+        }
+
+        // Initialize Leaflet map
+        var map = L.map('map').setView([51.505, -0.09], 3);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Adding markers to the map
+        L.marker([51.505, -0.09]).addTo(map)
+        .bindPopup('Historical Event 1')
+        .openPopup();
+
+        L.marker([48.8566, 2.3522]).addTo(map)
+        .bindPopup('Historical Event 2')
+        .openPopup();
+
+        L.marker([40.7128, -74.0060]).addTo(map)
+        .bindPopup('Historical Event 3')
+        .openPopup();
+    </script>
+-->
+</body>
+</html>

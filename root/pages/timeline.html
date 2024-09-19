@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeline</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f0f0f0;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+
+      .timeline-container {
+        position: relative;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .timeline-container::after {
+        content: '';
+        position: absolute;
+        width: 6px;
+        background-color: #333;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -3px;
+      }
+
+      .timeline-item {
+        padding: 20px;
+        position: relative;
+        background-color: inherit;
+        width: 50%;
+      }
+
+      .timeline-item::after {
+        content: '';
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        right: -17px;
+        background-color: white;
+        border: 4px solid #333;
+        top: 15px;
+        border-radius: 50%;
+        z-index: 1;
+      }
+
+      .left {
+        left: 0;
+      }
+
+      .right {
+        left: 50%;
+      }
+
+      .left::before {
+        content: " ";
+        height: 0;
+        position: absolute;
+        top: 22px;
+        width: 0;
+        z-index: 1;
+        right: 30px;
+        border: medium solid #333;
+        border-width: 10px 0 10px 10px;
+        border-color: transparent transparent transparent #333;
+      }
+
+      .right::before {
+        content: " ";
+        height: 0;
+        position: absolute;
+        top: 22px;
+        width: 0;
+        z-index: 1;
+        left: 30px;
+        border: medium solid #333;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent #333 transparent transparent;
+      }
+
+      .content {
+        padding: 20px;
+        background-color: white;
+        position: relative;
+        border-radius: 6px;
+      }
+
+      .content img {
+        max-width: 100%;
+        height: auto;
+        margin-top: 10px;
+      }
+
+      @media screen and (max-width: 600px) {
+        .timeline-container::after {
+          left: 31px;
+        }
+
+        .timeline-item {
+          width: 100%;
+          padding-left: 70px;
+          padding-right: 25px;
+        }
+
+        .timeline-item::before {
+          left: 60px;
+          border: medium solid #333;
+          border-width: 10px 10px 10px 0;
+          border-color: transparent #333 transparent transparent;
+        }
+
+        .left::before, .right::before {
+          left: 60px;
+        }
+
+        .right {
+          left: 0;
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="timeline-container">
+      <div class="timeline-item left">
+        <div class="content">
+          <h2>Die Märzrevolotion <b>(1848/49)</b></h2>
+          <p>
+            Die Märzrevolution findet in vielen Teilen Deutschlands statt. Die Aufstände scheitern letztlich, aber sie legen die Grundlagen für die Demokratiebewegung und die spätere Verfassung des Deutschen Reiches.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="timeline-container">
+      <div class="timeline-item right">
+        <div class="content">
+          <h2>Bismarck wird Ministerpräsident <b>(1862)</b></h2>
+          <p>
+            Otto von Bismarck wird preußischer Ministerpräsident und startet eine Phase der Realpolitik, die sich auf die Vereinigung der deutschen Staaten unter preußischer Führung konzentriert.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="timeline-container">
+      <div class="timeline-item left">
+        <div class="content">
+          <h2>Die deutschen Einigungskriege unter Bismarck <b>(1864-1871)</b></h2>
+          <p>
+            <ul>
+              <li>Deutsch-Dänischer Krieg <b>(1864)</b></li>
+              <li>Deutscher Krieg gegen Österreich <b>(1866)</b></li>
+              <li>Französisch-Deutscher Krieg <b>(1870–1871)</b></li>
+            </ul>
+            Diese Kriege führen zur Schwächung der äußeren Feinde und stärken die innere Einheit der deutschen Staaten.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="timeline-container">
+      <div class="timeline-item right">
+        <div class="content">
+          <h2>Gründung des Deutschen Kaiserreichs <b>1871</b></h2>
+          <p>
+            Am 18. Januar wird in Versailles das Deutsche Kaiserreich proklamiert, und der preußische König Wilhelm I. wird Kaiser des neuen Reiches. Die Gründung des Kaiserreichs ist ein entscheidender Moment für die heutige Identität Deutschlands, da es die Grundlage für den modernen Nationalstaat legt.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="timeline-container">
+      <div class="timeline-item left">
+        <div class="content">
+         <h2>Die Ära Bismarcks <b>(1871-1890</b></h2> 
+          <p>
+            <ul>
+              <li>Bismarck konsolidiert die Macht des Reiches, führt innenpolitisch den sogenannten Kulturkampf gegen die katholische Kirche und setzt sich für ein fortschrittliches Sozialversicherungssystem ein. </li>
+              <li>Außenpolitisch versucht er, Deutschland als Großmacht in Europa zu etablieren, dabei aber ein militärisches Bündnissystem zu schaffen, um Konflikte zu vermeiden.</li>
+            </ul>
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
