@@ -128,6 +128,137 @@
         }
       }
 
+      footer {
+          background-color: #333;
+          color: #fff;
+          padding: 40px 0;
+          font-family: Arial, sans-serif;
+      }
+      
+      .footer-container {
+          display: flex;
+          justify-content: space-around;
+          max-width: 1200px;
+          margin: 0 auto;
+      }
+      
+      .footer-column {
+          flex-basis: 30%;
+      }
+      
+      .footer-column h4 {
+          font-size: 1.2em;
+          margin-bottom: 20px;
+      }
+      
+      .footer-column p, 
+      .footer-column ul {
+          font-size: 0.9em;
+          line-height: 1.6;
+      }
+      
+      .footer-column ul {
+          list-style: none;
+          padding: 0;
+      }
+      
+      .footer-column ul li {
+          margin-bottom: 10px;
+      }
+      
+      .footer-column ul li a {
+          color: #fff;
+          text-decoration: none;
+      }
+      
+      .footer-column ul li a:hover {
+          text-decoration: underline;
+      }
+      
+      .social-icons a {
+          margin-right: 15px;
+          display: inline-block;
+      }
+      
+      .social-icons img {
+          width: 24px;
+          height: 24px;
+      }
+      
+      .footer-bottom {
+          text-align: center;
+          padding: 20px 0;
+          border-top: 1px solid #444;
+          margin-top: 30px;
+      }
+      
+      .footer-bottom p {
+          margin: 0;
+          font-size: 0.85em;
+      }
+
+      .profile {
+            background-color: rgb(194, 194, 194);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+        }
+
+        /* Profile title */
+        .profile h1 {
+            font-size: 2em;
+            color: #0044cc;
+            text-align: center;
+        }
+
+        /* Profile picture */
+        .profile img {
+            display: block;
+            max-width: 150px;
+            margin: 0 auto 20px auto;
+            border-radius: 50%;
+            border: 3px solid #0044cc;
+        }
+
+        /* Name and basic information */
+        .profile h2 {
+            font-size: 1.5em;
+            color: #333;
+            text-align: center;
+        }
+
+        .profile h3 {
+            font-size: 1.5em;
+            color: #333;
+            text-align: left;
+            text-decoration: underline;
+        }
+
+        .profile p {
+            font-size: 1em;
+            line-height: 1.6;
+            margin: 10px 0;
+            text-align: justify;
+        }
+
+        /* List for additional details */
+        .profile ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .profile ul li {
+            font-size: 1.1em;
+            background-color: #e6f2ff;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            text-align: justify;
+        }
     </style>
   </head>
   <body>
@@ -189,5 +320,35 @@
         </div>
       </div>
     </div>
+    <br><br>
+    <div class="profile">
+      <h2>Wie ist Deutschland so geworden, wie es ist?</h2>
+      <p>
+        Deutschland, wie es heute existiert, ist das Ergebnis einer langen Entwicklung. Die Reformen und Ideen von Persönlichkeiten wie Martin Luther, Johann Wolfgang von Goethe und Friedrich Schiller schufen ein Gefühl von nationaler Identität.<br><br>Goethe und Schiller wirken zwar hauptsächlich im 18. Jahrhundert, aber ihre Werke und Ideale leben im 19. Jahrhundert weiter und prägen das Selbstverständnis der gebildeten Schichten in Deutschland. Ihre Vorstellungen von Menschlichkeit, Freiheit und kultureller Größe beeinflussen auch das Verständnis von „deutscher Kultur“ in den Jahren der Reichsgründung.
+      </p>
+    </div>
+    <br><br>
+    <footer>
+      <div class="footer-container">
+        <div class="footer-column">
+          <h4>Links:</h4>
+          <ul>
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../pages/timeline.html">Timeline</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>David K. / Alex's Teil:</h4>
+          <ul>
+              <li><a href="https://github.com/CookieBrutze/history/blob/master/credits/Alex/timeline.pdf">Alex</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <a href="https://github.com/CookieBrutze/history">
+              <img src="../assets/images/github.png" height="300px" width="300px">
+          </a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
